@@ -12,7 +12,7 @@ def test_mute_room_updates_the_page(page: Page):
     page.goto("/rooms/room-12")
     page.get_by_role("button", name="Mute room").click()
 
-    expect(page.get_by_role("status")).to_have_text("Room mutted")
+    expect(page.get_by_role("status")).to_have_text("Room muted")
     expect(page.get_by_test_id("device-row").filter(has_text="mic-12-1")).to_contain_text("Muted")
     expect(page.get_by_test_id("device-row").filter(has_text="cam-12-1")).to_contain_text("Live")
 
